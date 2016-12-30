@@ -73,6 +73,7 @@ typedef NS_ENUM(NSInteger, REFrostedViewControllerLiveBackgroundStyle) {
 - (void)resizeMenuViewControllerToSize:(CGSize)size;
 - (void)hideMenuViewControllerWithCompletionHandler:(void(^)(void))completionHandler;
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer;
+- (void)setContentViewController:(UIViewController *)contentViewController animations:(void(^)(UIView *, UIView *, void(^)()))animations;
 
 @end
 
