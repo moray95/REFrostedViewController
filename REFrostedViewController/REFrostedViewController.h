@@ -38,6 +38,8 @@ typedef NS_ENUM(NSInteger, REFrostedViewControllerLiveBackgroundStyle) {
     REFrostedViewControllerLiveBackgroundStyleDark
 };
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol REFrostedViewControllerDelegate;
 
 @interface REFrostedViewController : UIViewController
@@ -73,7 +75,7 @@ typedef NS_ENUM(NSInteger, REFrostedViewControllerLiveBackgroundStyle) {
 - (void)resizeMenuViewControllerToSize:(CGSize)size;
 - (void)hideMenuViewControllerWithCompletionHandler:(void(^)(void))completionHandler;
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer;
-- (void)setContentViewController:(UIViewController *)contentViewController animations:(void(^)(UIView *, UIView *, void(^)()))animations;
+- (void)setContentViewController:(UIViewController *)contentViewController animations:(nullable void(^)(UIView *, UIView *, void(^)()))animations NS_SWIFT_NAME(setContentViewController(_:animations:));
 
 @end
 
@@ -88,3 +90,5 @@ typedef NS_ENUM(NSInteger, REFrostedViewControllerLiveBackgroundStyle) {
 - (void)frostedViewController:(REFrostedViewController *)frostedViewController didHideMenuViewController:(UIViewController *)menuViewController;
 
 @end
+
+NS_ASSUME_NONNULL_END
